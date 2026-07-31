@@ -49,17 +49,17 @@ Learn Harness Engineering 是一门专注于 AI 编程代理工程化的课程�
 ### 课程主页
 > 全面的课程大纲和核心理念介绍，为你提供清晰的学习起点。
 
-![课程主页预览](../../docs/public/screenshots/readme/en-home.png)
+![课程主页预览](../../docs/public/screenshots/readme/zh-home.png)
 
 ### 沉浸式讲座
 > 深入剖析真实痛点，配合动手项目（如项目 01），带来沉浸式学习体验。
 
-![课程讲座预览](../../docs/public/screenshots/readme/en-lecture-01.png)
+![课程讲座预览](../../docs/public/screenshots/readme/zh-lecture-01.png)
 
 ### 即用资源库
 > 专为解决多轮 AI 代理开发中的常见问题而设计的模板和参考配置，例如上下文丢失和过早完成任务。
 
-![资源库预览](../../docs/public/screenshots/readme/en-resources.png)
+![资源库预览](../../docs/public/screenshots/readme/zh-resources.png)
 
 ## PDF 课程手册
 
