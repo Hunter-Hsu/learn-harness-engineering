@@ -167,7 +167,7 @@ Anthropic 的实际数据：对于 Sonnet 4.5，上下文焦虑足够严重，�
 - [OpenAI: Harness Engineering](https://openai.com/index/harness-engineering/)
 - [Lost in the Middle: How Language Models Use Long Contexts](https://arxiv.org/abs/2307.03172)
 - [Claude Code Documentation](https://docs.anthropic.com/en/docs/claude-code)
-- [HumanLayer: Harness Engineering for Coding Agents](https://humanlayer.dev/articles/harness-engineering-for-coding-agents/)
+- [HumanLayer: Harness Engineering for Coding Agents](https://www.humanlayer.dev/blog/skill-issue-harness-engineering-for-coding-agents)
 
 ## 练习
 

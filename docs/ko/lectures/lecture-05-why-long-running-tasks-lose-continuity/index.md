@@ -169,7 +169,7 @@ Anthropic의 실제 데이터: Sonnet 4.5에서 컨텍스트 불안이 심각해
 - [OpenAI: Harness Engineering](https://openai.com/index/harness-engineering/)
 - [Lost in the Middle: How Language Models Use Long Contexts](https://arxiv.org/abs/2307.03172)
 - [Claude Code Documentation](https://docs.anthropic.com/en/docs/claude-code)
-- [HumanLayer: Harness Engineering for Coding Agents](https://humanlayer.dev/articles/harness-engineering-for-coding-agents/)
+- [HumanLayer: Harness Engineering for Coding Agents](https://www.humanlayer.dev/blog/skill-issue-harness-engineering-for-coding-agents)
 
 ## 연습 문제
 

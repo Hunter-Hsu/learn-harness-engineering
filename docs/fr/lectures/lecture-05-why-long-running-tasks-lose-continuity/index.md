@@ -169,7 +169,7 @@ Comparaison quantitative : temps de reconstruction réduit de ~78 %, taux de com
 - [OpenAI: Harness Engineering](https://openai.com/index/harness-engineering/)
 - [Lost in the Middle: How Language Models Use Long Contexts](https://arxiv.org/abs/2307.03172)
 - [Claude Code Documentation](https://docs.anthropic.com/fr/docs/claude-code)
-- [HumanLayer: Harness Engineering for Coding Agents](https://humanlayer.dev/articles/harness-engineering-for-coding-agents/)
+- [HumanLayer: Harness Engineering for Coding Agents](https://www.humanlayer.dev/blog/skill-issue-harness-engineering-for-coding-agents)
 
 ## Exercices
 

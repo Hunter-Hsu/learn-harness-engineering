@@ -150,7 +150,7 @@ Comparação do ciclo completo do projeto: a abordagem mista apresentou um tempo
 
 - [Anthropic: Harnesses eficazes para agentes de longa duração](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents)
 - [OpenAI: Harness Engineering](https://openai.com/index/harness-engineering/)
-- [HumanLayer: Harness Engineering para Agentes de Programação](https://humanlayer.dev/articles/harness-engineering-for-coding-agents/)
+- [HumanLayer: Harness Engineering para Agentes de Programação](https://www.humanlayer.dev/blog/skill-issue-harness-engineering-for-coding-agents)
 - [Infrastructure as Code — Martin Fowler](https://martinfowler.com/bliki/InfrastructureAsCode.html)
 - [SWE-agent: Interfaces entre Agentes e Computadores](https://github.com/princeton-nlp/SWE-agent)
 

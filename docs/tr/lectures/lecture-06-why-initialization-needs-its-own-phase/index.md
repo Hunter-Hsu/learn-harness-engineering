@@ -144,7 +144,7 @@ Tam proje döngüsü karşılaştırması: karışık yaklaşımın toplam yenid
 
 - [Anthropic: Effective Harnesses for Long-Running Agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents)
 - [OpenAI: Harness Engineering](https://openai.com/index/harness-engineering/)
-- [HumanLayer: Harness Engineering for Coding Agents](https://humanlayer.dev/articles/harness-engineering-for-coding-agents/)
+- [HumanLayer: Harness Engineering for Coding Agents](https://www.humanlayer.dev/blog/skill-issue-harness-engineering-for-coding-agents)
 - [Infrastructure as Code — Martin Fowler](https://martinfowler.com/bliki/InfrastructureAsCode.html)
 - [SWE-agent: Agent-Computer Interfaces](https://github.com/princeton-nlp/SWE-agent)
 

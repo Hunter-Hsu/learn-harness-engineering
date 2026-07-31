@@ -169,7 +169,7 @@ Quantitativer Vergleich: Rebuild-Zeit um ~78% reduziert, Feature-Abschlussrate v
 - [OpenAI: Harness Engineering](https://openai.com/index/harness-engineering/)
 - [Lost in the Middle: How Language Models Use Long Contexts](https://arxiv.org/abs/2307.03172)
 - [Claude Code Documentation](https://docs.anthropic.com/de/docs/claude-code)
-- [HumanLayer: Harness Engineering for Coding Agents](https://humanlayer.dev/articles/harness-engineering-for-coding-agents/)
+- [HumanLayer: Harness Engineering for Coding Agents](https://www.humanlayer.dev/blog/skill-issue-harness-engineering-for-coding-agents)
 
 ## Übungen
 
