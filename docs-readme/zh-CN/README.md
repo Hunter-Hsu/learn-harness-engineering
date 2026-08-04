@@ -22,6 +22,21 @@
 
 Learn Harness Engineering 是一门专注于 AI 编程代理工程化的课程。我们深入研究和综合了业界最先进的 Harness Engineering 理论与实践。我们的核心参考资料包括：
 
+> **🆕 2026 年 8 月更新：图工程（Graph Engineering）**——新增 1 讲 + 1 个项目：
+>
+> - **第十四讲** [从单循环到图工程](../../docs/zh/lectures/lecture-14-graph-engineering/index.md)：为什么单循环必然长成图——四层叠加（prompt → context → loop → graph）及 harness 在其中的位置、图的四个零件（节点、边、共享状态、路由）、为什么 loop 内的检查点救不了规模上的三种结构性失败（Goodhart、向上失明、冲突）、框架无关的六步构建你的第一张图、Graph 与 Workflow 的区别、锚、发布前 vs 发布后的开源项目现状、编排税，以及什么时候真的值得画图。
+> - **项目 08** [把你的工作流画成一张图](../../docs/zh/projects/project-08-graph-engineering-first-graph/index.md)：三个递进实验——把 maker-checker loop 画成显式图、加并行 fan-out/fan-in 节点、加条件回退边和人工审批节点。
+>
+> **核心观点：** Loop 是只有一个节点的图。当任务需要分工、并行、共享状态、验证和恢复时——它就不再是 loop，而是图了。
+>
+> **🆕 2026 年 7 月更新：循环工程（Loop Engineering）**——新增 1 讲 + 1 个项目 + 代码模板：
+>
+> - **第十三讲** [为什么你需要停止亲自提示你的代理](../../docs/zh/lectures/lecture-13-loop-engineering/index.md)：从 `/goal` 到循环工程的六个原语（automations、worktrees、skills、connectors、sub-agents、external state）、生成器/评估器分离、四种沉默成本，以及逐步构建你的第一个循环。
+> - **项目 07** [构建你的第一个自动循环](../../docs/zh/projects/project-07-loop-engineering-first-loop/index.md)：三个递进实验——目标循环、定时循环、制造者-检查者循环。对比手动 vs. 自动化、衡量干预减少、学会跳出循环。
+> - **代码模板**：`goal-template.md`、`loop-state-template.md`、`maker-prompt.md`、`checker-prompt.md`——即插即用的循环构建模板。
+>
+> **核心观点：** Harness 工程造车。循环工程设计它行驶的道路——而你要从车外设计这条路。
+
 - [OpenAI: Harness engineering: leveraging Codex in an agent-first world](https://openai.com/index/harness-engineering/)
 - [Anthropic: Effective harnesses for long-running agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents)
 - [Anthropic: Harness design for long-running application development](https://www.anthropic.com/engineering/harness-design-long-running-apps)
@@ -194,15 +209,15 @@ Harness Engineering 是围绕模型构建一个完整的工作环境，使其产
 
 课程分为三个部分：
 
-1. **讲座**：12 个概念单元，讲解 Harness Engineering 背后的理论。
-2. **项目**：6 个动手项目，你将从零构建一个代理工作空间。
+1. **讲座**：14 个概念单元，讲解 Harness Engineering 背后的理论。
+2. **项目**：8 个动手项目，你将从零构建一个代理工作空间。
 3. **资源库**：可直接使用的模板（`AGENTS.md`、`feature_list.json`、`init.sh` 等），今天就能用在你自己的仓库中。
 
 ---
 
 ## 快速开始：今天就改善你的代理
 
-你不需要先读完所有 12 个讲座才能开始获得价值。如果你已经在真实项目中使用编程代理，以下是如何立刻改善它。
+你不需要先读完所有 14 个讲座才能开始获得价值。如果你已经在真实项目中使用编程代理，以下是如何立刻改善它。
 
 思路很简单：与其只写提示词，不如给你的代理一组结构化文件，定义做什么、已做了什么、以及如何验证工作。这些文件存在于你的仓库中，所以每次会话都从相同的状态开始。
 
@@ -222,7 +237,7 @@ Harness Engineering 是围绕模型构建一个完整的工作环境，使其产
 
 ## 毕业项目：一个真实的应用
 
-全部六个课程项目围绕同一个产品展开：**一个基于 Electron 的个人知识库桌面应用**。
+全部八个课程项目围绕同一个产品展开：**一个基于 Electron 的个人知识库桌面应用**。
 
 ```text
     ┌─────────────────────────────────────────────────────┐
@@ -301,6 +316,25 @@ Harness Engineering 是围绕模型构建一个完整的工作环境，使其产
          v                                       v
     P05  代理验证自己的工作                   P06  构建完整的 Harness
                                                 （毕业项目）
+
+    阶段 7：自动化循环
+    ==========================
+    L13  停止提示你的代理——
+         改为设计循环
+         |
+         v
+    P07  构建你的第一个自动循环
+         （目标循环、定时循环、制造者-检查者）
+
+    阶段 8：结构化系统
+    =============================
+    L14  把系统画成一张图——
+         节点、边、共享状态、路由
+         |
+         v
+    P08  把你的工作流画成一张图
+         （显式图、并行 fan-out/fan-in、
+          回退边、人机协同）
 ```
 
 如果你是业余时间学习，每个阶段大约需要一周。如果你想加快速度，阶段 1-3 可以在一个长周末完成。
@@ -309,7 +343,7 @@ Harness Engineering 是围绕模型构建一个完整的工作环境，使其产
 
 ## 课程大纲
 
-### 讲座——12 个概念单元，每个回答一个核心问题
+### 讲座——14 个概念单元，每个回答一个核心问题
 
 *在[文档网站](https://walkinglabs.github.io/learn-harness-engineering/)上阅读每讲完整文本。*
 
@@ -329,6 +363,10 @@ Harness Engineering 是围绕模型构建一个完整的工作环境，使其产
 | [L12](../../docs/zh/lectures/lecture-12-why-every-session-must-leave-a-clean-state/index.md) | 为什么每次会话都必须留下干净的状态？ | 下一次会话的成功取决于这一次会话的清理 |
 
 ### 项目——6 个动手项目，将讲座方法应用到同一个 Electron 应用上
+| [L13](../../docs/zh/lectures/lecture-13-loop-engineering/index.md) | 为什么你需要停止亲自提示你的代理？ | 从手动驱动到自动循环——目标循环、定时循环、制造者-检查者分离 |
+| [L14](../../docs/zh/lectures/lecture-14-graph-engineering/index.md) | 为什么单循环会演变成图？ | 从单循环到图工程——节点、边、共享状态、路由，以及何时真正值得画图 |
+
+### 项目——8 个动手项目，将讲座方法应用到同一个 Electron 应用上
 
 | 项目 | 你要做什么 | Harness 机制 |
 |------|-----------|--------------|
@@ -338,6 +376,8 @@ Harness Engineering 是围绕模型构建一个完整的工作环境，使其产
 | [P04](../../docs/zh/projects/project-04-incremental-indexing/index.md) | 阻止代理做得太多或太少 | 运行时反馈 + 范围控制 + 增量索引 |
 | [P05](../../docs/zh/projects/project-05-grounded-qa-verification/index.md) | 让代理验证自己的工作 | 自验证 + 有据问答 + 基于证据的完成 |
 | [P06](../../docs/zh/projects/project-06-runtime-observability-and-debugging/index.md) | 从零构建完整的 Harness（毕业项目） | 完整 Harness：所有机制 + 可观测性 + 消融实验 |
+| [P07](../../docs/zh/projects/project-07-loop-engineering-first-loop/index.md) | 构建你的第一个自动循环 | 目标循环、定时循环、制造者-检查者分离、循环状态管理 |
+| [P08](../../docs/zh/projects/project-08-graph-engineering-first-graph/index.md) | 把你的工作流画成一张图 | 显式的节点/边/状态/路由、并行 fan-out/fan-in、回退边、人机协同审批 |
 
 ```text
     项目演进
@@ -359,6 +399,12 @@ Harness Engineering 是围绕模型构建一个完整的工作环境，使其产
      |
      v
     P06  完整 Harness（毕业项目）             你构建完整系统
+     |
+     v
+    P07  你的第一个自动循环                   你跳出循环
+     |
+     v
+    P08  把你的工作流画成一张图               你把系统画成图
 
     每个项目的 solution 成为下一个项目的 starter。
     应用在演进。你的 Harness 技能随之增长。
@@ -521,13 +567,13 @@ npm run docs:preview    # 预览构建后的站点
 ```text
 learn-harness-engineering/
 ├── docs/                          # VitePress 文档站点
-│   ├── lectures/                  # 12 个讲座（index.md + code/ 示例）
+│   ├── lectures/                  # 14 个讲座（index.md + code/ 示例）
 │   │   ├── lecture-01-*/
 │   │   ├── lecture-02-*/
-│   │   └── ... （共 12 个）
-│   ├── projects/                  # 6 个项目描述
+│   │   └── ... （共 14 个）
+│   ├── projects/                  # 8 个项目描述
 │   │   ├── project-01-*/
-│   │   └── ... （共 6 个）
+│   │   └── ... （共 8 个）
 │   └── resources/                 # 多语言模板和参考
 │       ├── en/                    # 英文模板、检查清单、指南
 │       ├── zh/                    # 中文模板、检查清单、指南
@@ -547,7 +593,7 @@ learn-harness-engineering/
 ## 课程组织方式
 
 - 每个讲座聚焦一个问题
-- 课程包含 6 个项目
+- 课程包含 8 个项目
 - 每个项目都要求代理做真实的工作
 - 每个项目都比较弱 Harness 和强 Harness 的结果
 - 重要的是可测量的差异，不是写了多少文档

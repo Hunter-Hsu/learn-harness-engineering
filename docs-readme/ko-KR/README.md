@@ -22,6 +22,21 @@
 
 Learn Harness Engineering은 AI 코딩 에이전트의 엔지니어링에 집중하는 강좌입니다. 업계에서 가장 선진적인 Harness Engineering 이론과 실무를 심층적으로 연구하고 종합했습니다. 핵심 참고 자료는 다음과 같습니다:
 
+> **🆕 2026년 8월 업데이트: 그래프 엔지니어링(Graph Engineering)** — 강의 1개 + 프로젝트 1개 추가:
+>
+> - **제14강** [단일 루프에서 그래프 엔지니어링으로](../../docs/ko/lectures/lecture-14-graph-engineering/index.md): 왜 단일 루프는 반드시 그래프로 자라나는가 — 4층 겹침(prompt → context → loop → graph)과 harness의 위치, 그래프의 네 부품(노드, 엣지, 공유 상태, 라우팅), 왜 루프 안의 체크포인트는 규모에서의 세 가지 구조적 실패(Goodhart, 위쪽 실명, 충돌)를 구하지 못하는지, 프레임워크 무관의 여섯 단계로 첫 그래프 구축, Graph와 Workflow의 차이, 앵커, 출시 전/후 오픈소스 프로젝트 현황, 오케스트레이션 세금, 그리고 언제 정말로 그래프를 그릴 가치가 있는지.
+> - **프로젝트 08** [내 워크플로우를 그래프로 그리기](../../docs/ko/projects/project-08-graph-engineering-first-graph/index.md): 세 가지 단계 실험 — maker-checker loop을 명시적 그래프로 그리기, 병렬 fan-out/fan-in 노드 추가, 조건부 롤백 엣지와 인간 승인 노드 추가.
+>
+> **핵심 관점:** Loop은 노드가 하나뿐인 그래프입니다. 작업이 분업, 병렬, 공유 상태, 검증, 복구를 필요로 하는 순간 — 그것은 더 이상 loop이 아니라 그래프입니다.
+>
+> **🆕 2026년 7월 업데이트: 루프 엔지니어링(Loop Engineering)** — 강의 1개 + 프로젝트 1개 + 코드 템플릿 추가:
+>
+> - **제13강** [왜 당신의 에이전트에게 직접 프롬프팅하는 것을 멈춰야 하는가](../../docs/ko/lectures/lecture-13-loop-engineering/index.md): `/goal`에서 루프 엔지니어링의 여섯 가지 원시(automations, worktrees, skills, connectors, sub-agents, external state), 생성자/평가자 분리, 네 가지 조용한 비용, 그리고 첫 루프 단계별 구축.
+> - **프로젝트 07** [첫 번째 자동 루프 구축하기](../../docs/ko/projects/project-07-loop-engineering-first-loop/index.md): 세 가지 단계 실험 — 목표 루프, 예약 루프, 메이커-체커 루프. 수동 vs 자동 비교, 개입 감소 측정, 루프 밖으로 나가는 법 배우기.
+> - **코드 템플릿**: `goal-template.md`, `loop-state-template.md`, `maker-prompt.md`, `checker-prompt.md` — 바로 사용 가능한 루프 구축 템플릿.
+>
+> **핵심 관점:** Harness 엔지니어링은 차를 만듭니다. 루프 엔지니어링은 그것이 달리는 도로를 설계합니다 — 그리고 당신은 차 밖에서 그 도로를 설계해야 합니다.
+
 - [OpenAI: Harness engineering: leveraging Codex in an agent-first world](https://openai.com/index/harness-engineering/)
 - [Anthropic: Effective harnesses for long-running agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents)
 - [Anthropic: Harness design for long-running application development](https://www.anthropic.com/engineering/harness-design-long-running-apps)
@@ -195,15 +210,15 @@ Harness engineering은 모델 주변에 안정적인 결과를 생성하는 완�
 
 과정은 세 부분으로 나뉩니다:
 
-1. **강의(Lectures)**: Harness engineering 이론을 설명하는 12개의 개념적 단원.
-2. **프로젝트(Projects)**: 처음부터 에이전트 작업 공간을 구축하는 6개의 실습 프로젝트.
+1. **강의(Lectures)**: Harness engineering 이론을 설명하는 14개의 개념적 단원.
+2. **프로젝트(Projects)**: 처음부터 에이전트 작업 공간을 구축하는 8개의 실습 프로젝트.
 3. **리소스 라이브러리**: 여러분의 저장소에 오늘 바로 사용할 수 있는 복사 가능 템플릿(`AGENTS.md`, `feature_list.json`, `init.sh` 등).
 
 ---
 
 ## 빠른 시작: 오늘 바로 에이전트 개선하기
 
-12개의 강의를 모두 읽고 나서 가치를 얻기 시작할 필요가 없습니다. 이미 실제 프로젝트에서 코딩 에이전트를 사용하고 있다면, 지금 당장 개선하는 방법은 다음과 같습니다.
+14개의 강의를 모두 읽고 나서 가치를 얻기 시작할 필요가 없습니다. 이미 실제 프로젝트에서 코딩 에이전트를 사용하고 있다면, 지금 당장 개선하는 방법은 다음과 같습니다.
 
 핵심 아이디어는 간단합니다: 프롬프트만 작성하는 대신, 무엇을 해야 하는지, 무엇이 완료되었는지, 작업을 어떻게 검증할지 정의하는 구조화된 파일 세트를 에이전트에 제공하세요. 이 파일들은 저장소 내에 있으므로 모든 세션이 동일한 상태에서 시작합니다.
 
@@ -223,7 +238,7 @@ Harness engineering은 모델 주변에 안정적인 결과를 생성하는 완�
 
 ## 캡스톤 프로젝트: 실제 앱
 
-6개의 강좌 프로젝트는 모두 동일한 제품을 중심으로 전개됩니다: **Electron 기반 개인 지식 베이스 데스크톱 앱**.
+8개의 강좌 프로젝트는 모두 동일한 제품을 중심으로 전개됩니다: **Electron 기반 개인 지식 베이스 데스크톱 앱**.
 
 ```text
     ┌─────────────────────────────────────────────────────┐
@@ -301,6 +316,25 @@ Harness engineering은 모델 주변에 안정적인 결과를 생성하는 완�
          v                                     v
     P05  에이전트가 자체 검증                 P06  완전한 하니스 구축
                                                   (캡스톤 프로젝트)
+
+    7단계: 자동화 루프
+    ==========================
+    L13  에이전트에게 프롬프팅하는 것을
+         멈추고 루프를 설계하자
+         |
+         v
+    P07  첫 번째 자동 루프 구축하기
+         (목표 루프, 예약 루프, 메이커-체커)
+
+    8단계: 시스템 구조화
+    =============================
+    L14  시스템을 그래프로 그리기—
+         노드, 엣지, 공유 상태, 라우팅
+         |
+         v
+    P08  내 워크플로우를 그래프로 그리기
+         (명시적 그래프, 병렬 fan-out/fan-in,
+          롤백 엣지, 인간-기계 협력)
 ```
 
 파트타임으로 진행하면 각 단계는 약 1주일이 소요됩니다. 더 빠르게 진행하고 싶다면 1~3단계는 긴 주말에 완료할 수 있습니다.
@@ -309,35 +343,39 @@ Harness engineering은 모델 주변에 안정적인 결과를 생성하는 완�
 
 ## 강의 개요
 
-### 강의 — 각각 하나의 핵심 질문에 답하는 12개의 개념적 단원
+### 강의 — 각각 하나의 핵심 질문에 답하는 14개의 개념적 단원
 
 *각 강의의 전체 내용은 [문서 웹사이트](https://walkinglabs.github.io/learn-harness-engineering/)에서 읽을 수 있습니다.*
 
 | 세션 | 질문 | 핵심 아이디어 |
 |---------|----------|-----------|
-| [L01](../../docs/en/lectures/lecture-01-why-capable-agents-still-fail/index.md) | 왜 강력한 모델도 실제 작업에서 여전히 실패하는가? | 벤치마크와 실제 엔지니어링 사이의 역량 격차 |
-| [L02](../../docs/en/lectures/lecture-02-what-a-harness-actually-is/index.md) | "하니스"는 실제로 무엇을 의미하는가? | 다섯 가지 하위 시스템: 지시 사항, 상태, 검증, 범위, 수명 주기 |
-| [L03](../../docs/en/lectures/lecture-03-why-the-repository-must-become-the-system-of-record/index.md) | 왜 저장소가 단일 진실 공급원이어야 하는가? | 에이전트가 볼 수 없다면 존재하지 않는 것과 같다 |
-| [L04](../../docs/en/lectures/lecture-04-why-one-giant-instruction-file-fails/index.md) | 왜 거대한 단일 지시 파일은 실패하는가? | 점진적 공개: 백과사전이 아닌 지도를 제공하라 |
-| [L05](../../docs/en/lectures/lecture-05-why-long-running-tasks-lose-continuity/index.md) | 왜 장기 실행 작업은 연속성을 잃는가? | 진행 상황을 디스크에 영속화; 중단된 지점에서 이어하기 |
-| [L06](../../docs/en/lectures/lecture-06-why-initialization-needs-its-own-phase/index.md) | 왜 초기화에 전용 단계가 필요한가? | 에이전트가 작업을 시작하기 전에 환경이 정상인지 확인 |
-| [L07](../../docs/en/lectures/lecture-07-why-agents-overreach-and-under-finish/index.md) | 왜 에이전트는 과도하게 작업하고 불완전하게 마무리하는가? | 한 번에 하나의 기능; 명시적인 완료 정의 |
-| [L08](../../docs/en/lectures/lecture-08-why-feature-lists-are-harness-primitives/index.md) | 왜 기능 목록이 하니스 프리미티브인가? | 에이전트가 무시할 수 없는 기계 판독 가능 범위 경계 |
-| [L09](../../docs/en/lectures/lecture-09-why-agents-declare-victory-too-early/index.md) | 왜 에이전트는 너무 일찍 완료를 선언하는가? | 검증 격차: 자신감 ≠ 정확성 |
-| [L10](../../docs/en/lectures/lecture-10-why-end-to-end-testing-changes-results/index.md) | 왜 엔드투엔드 테스트가 결과를 바꾸는가? | 전체 파이프라인 실행만이 진정한 검증으로 인정된다 |
-| [L11](../../docs/en/lectures/lecture-11-why-observability-belongs-inside-the-harness/index.md) | 왜 관측 가능성이 하니스 내에 있어야 하는가? | 에이전트가 무엇을 했는지 볼 수 없으면, 무엇을 망가뜨렸는지 고칠 수 없다 |
-| [L12](../../docs/en/lectures/lecture-12-why-every-session-must-leave-a-clean-state/index.md) | 왜 모든 세션은 깔끔한 상태를 남겨야 하는가? | 다음 세션의 성공은 이번 세션의 정리에 달려 있다 |
+| [L01](../../docs/ko/lectures/lecture-01-why-capable-agents-still-fail/index.md) | 왜 강력한 모델도 실제 작업에서 여전히 실패하는가? | 벤치마크와 실제 엔지니어링 사이의 역량 격차 |
+| [L02](../../docs/ko/lectures/lecture-02-what-a-harness-actually-is/index.md) | "하니스"는 실제로 무엇을 의미하는가? | 다섯 가지 하위 시스템: 지시 사항, 상태, 검증, 범위, 수명 주기 |
+| [L03](../../docs/ko/lectures/lecture-03-why-the-repository-must-become-the-system-of-record/index.md) | 왜 저장소가 단일 진실 공급원이어야 하는가? | 에이전트가 볼 수 없다면 존재하지 않는 것과 같다 |
+| [L04](../../docs/ko/lectures/lecture-04-why-one-giant-instruction-file-fails/index.md) | 왜 거대한 단일 지시 파일은 실패하는가? | 점진적 공개: 백과사전이 아닌 지도를 제공하라 |
+| [L05](../../docs/ko/lectures/lecture-05-why-long-running-tasks-lose-continuity/index.md) | 왜 장기 실행 작업은 연속성을 잃는가? | 진행 상황을 디스크에 영속화; 중단된 지점에서 이어하기 |
+| [L06](../../docs/ko/lectures/lecture-06-why-initialization-needs-its-own-phase/index.md) | 왜 초기화에 전용 단계가 필요한가? | 에이전트가 작업을 시작하기 전에 환경이 정상인지 확인 |
+| [L07](../../docs/ko/lectures/lecture-07-why-agents-overreach-and-under-finish/index.md) | 왜 에이전트는 과도하게 작업하고 불완전하게 마무리하는가? | 한 번에 하나의 기능; 명시적인 완료 정의 |
+| [L08](../../docs/ko/lectures/lecture-08-why-feature-lists-are-harness-primitives/index.md) | 왜 기능 목록이 하니스 프리미티브인가? | 에이전트가 무시할 수 없는 기계 판독 가능 범위 경계 |
+| [L09](../../docs/ko/lectures/lecture-09-why-agents-declare-victory-too-early/index.md) | 왜 에이전트는 너무 일찍 완료를 선언하는가? | 검증 격차: 자신감 ≠ 정확성 |
+| [L10](../../docs/ko/lectures/lecture-10-why-end-to-end-testing-changes-results/index.md) | 왜 엔드투엔드 테스트가 결과를 바꾸는가? | 전체 파이프라인 실행만이 진정한 검증으로 인정된다 |
+| [L11](../../docs/ko/lectures/lecture-11-why-observability-belongs-inside-the-harness/index.md) | 왜 관측 가능성이 하니스 내에 있어야 하는가? | 에이전트가 무엇을 했는지 볼 수 없으면, 무엇을 망가뜨렸는지 고칠 수 없다 |
+| [L12](../../docs/ko/lectures/lecture-12-why-every-session-must-leave-a-clean-state/index.md) | 왜 모든 세션은 깔끔한 상태를 남겨야 하는가? | 다음 세션의 성공은 이번 세션의 정리에 달려 있다 |
+| [L13](../../docs/ko/lectures/lecture-13-loop-engineering/index.md) | 왜 당신의 에이전트에게 직접 프롬프팅하는 것을 멈춰야 하는가? | 수동 구동에서 자동 루프로 — 목표 루프, 예약 루프, 메이커-체커 분리 |
+| [L14](../../docs/ko/lectures/lecture-14-graph-engineering/index.md) | 왜 단일 루프는 그래프로 진화하는가? | 단일 루프에서 그래프 엔지니어링으로 — 노드, 엣지, 공유 상태, 라우팅, 그리고 언제 정말로 그래프를 그릴 가치가 있는지 |
 
-### 프로젝트 — 동일한 Electron 앱에 강의 방법론을 적용하는 6개의 실습 프로젝트
+### 프로젝트 — 동일한 Electron 앱에 강의 방법론을 적용하는 8개의 실습 프로젝트
 
 | 프로젝트 | 수행 내용 | 하니스 메커니즘 |
 |---------|------------|-------------------|
-| [P01](../../docs/en/projects/project-01-baseline-vs-minimal-harness/index.md) | 동일한 작업을 두 번 실행: 프롬프트만 vs. 규칙 우선 | 최소 하니스: AGENTS.md + init.sh + feature_list.json |
-| [P02](../../docs/en/projects/project-02-agent-readable-workspace/index.md) | 에이전트가 읽을 수 있도록 저장소 재구성 | 에이전트 판독 가능 작업 공간 + 영속적 상태 파일 |
-| [P03](../../docs/en/projects/project-03-multi-session-continuity/index.md) | 에이전트가 중단된 지점에서 이어가도록 만들기 | 진행 로그 + 세션 인계 + 다중 세션 연속성 |
-| [P04](../../docs/en/projects/project-04-incremental-indexing/index.md) | 에이전트가 너무 많거나 너무 적게 작업하지 않도록 방지 | 런타임 피드백 + 범위 제어 + 점진적 인덱싱 |
-| [P05](../../docs/en/projects/project-05-grounded-qa-verification/index.md) | 에이전트가 자신의 작업을 검증하도록 만들기 | 자체 검증 + 근거 기반 Q&A + 증거 기반 완료 |
-| [P06](../../docs/en/projects/project-06-runtime-observability-and-debugging/index.md) | 처음부터 완전한 하니스 구축 (캡스톤) | 전체 하니스: 모든 메커니즘 + 관측 가능성 + 어블레이션 스터디 |
+| [P01](../../docs/ko/projects/project-01-baseline-vs-minimal-harness/index.md) | 동일한 작업을 두 번 실행: 프롬프트만 vs. 규칙 우선 | 최소 하니스: AGENTS.md + init.sh + feature_list.json |
+| [P02](../../docs/ko/projects/project-02-agent-readable-workspace/index.md) | 에이전트가 읽을 수 있도록 저장소 재구성 | 에이전트 판독 가능 작업 공간 + 영속적 상태 파일 |
+| [P03](../../docs/ko/projects/project-03-multi-session-continuity/index.md) | 에이전트가 중단된 지점에서 이어가도록 만들기 | 진행 로그 + 세션 인계 + 다중 세션 연속성 |
+| [P04](../../docs/ko/projects/project-04-incremental-indexing/index.md) | 에이전트가 너무 많거나 너무 적게 작업하지 않도록 방지 | 런타임 피드백 + 범위 제어 + 점진적 인덱싱 |
+| [P05](../../docs/ko/projects/project-05-grounded-qa-verification/index.md) | 에이전트가 자신의 작업을 검증하도록 만들기 | 자체 검증 + 근거 기반 Q&A + 증거 기반 완료 |
+| [P06](../../docs/ko/projects/project-06-runtime-observability-and-debugging/index.md) | 처음부터 완전한 하니스 구축 (캡스톤) | 전체 하니스: 모든 메커니즘 + 관측 가능성 + 어블레이션 스터디 |
+| [P07](../../docs/ko/projects/project-07-loop-engineering-first-loop/index.md) | 첫 번째 자동 루프 구축 | 목표 루프, 예약 루프, 메이커-체커 분리, 루프 상태 관리 |
+| [P08](../../docs/ko/projects/project-08-graph-engineering-first-graph/index.md) | 내 워크플로우를 그래프로 그리기 | 명시적 노드/엣지/상태/라우팅, 병렬 fan-out/fan-in, 롤백 엣지, 인간-기계 협력 승인 |
 
 ```text
     프로젝트 발전 과정
@@ -359,6 +397,12 @@ Harness engineering은 모델 주변에 안정적인 결과를 생성하는 완�
      |
      v
     P06  완전한 하니스 (캡스톤)              전체 시스템을 구축합니다
+     |
+     v
+    P07  첫 번째 자동 루프                    루프 밖으로 나갑니다
+     |
+     v
+    P08  내 워크플로우를 그래프로 그리기        시스템을 그래프로 그립니다
 
     각 프로젝트의 솔루션이 다음 프로젝트의 스타터가 됩니다.
     앱이 발전합니다. 여러분의 하니스 기술도 함께 성장합니다.
@@ -512,7 +556,7 @@ npm run docs:preview    # 빌드된 사이트 미리보기
 - [Thoughtworks / Martin Fowler: Harness engineering for coding agent users](https://martinfowler.com/articles/harness-engineering.html)
 - [Cursor: Continually improving our agent harness](https://cursor.com/blog/continually-improving-agent-harness)
 
-계층화된 전체 참고 문헌 목록은 [`docs/en/resources/reference/`](../../docs/en/resources/reference/index.md)에서 확인하세요.
+계층화된 전체 참고 문헌 목록은 [`docs/ko/resources/reference/`](../../docs/ko/resources/reference/index.md)에서 확인하세요.
 
 ---
 
@@ -521,13 +565,13 @@ npm run docs:preview    # 빌드된 사이트 미리보기
 ```text
 learn-harness-engineering/
 ├── docs/                          # VitePress 문서 사이트
-│   ├── lectures/                  # 12개 강의 (index.md + code/ 예제)
+│   ├── lectures/                  # 14개 강의 (index.md + code/ 예제)
 │   │   ├── lecture-01-*/
 │   │   ├── lecture-02-*/
-│   │   └── ... (총 12개)
-│   ├── projects/                  # 6개 프로젝트 설명
+│   │   └── ... (총 14개)
+│   ├── projects/                  # 8개 프로젝트 설명
 │   │   ├── project-01-*/
-│   │   └── ... (총 6개)
+│   │   └── ... (총 8개)
 │   └── resources/                 # 다국어 템플릿 및 참조 자료
 │       ├── en/                    # 영어 템플릿, 체크리스트, 가이드
 │       ├── zh/                    # 중국어 템플릿, 체크리스트, 가이드
@@ -547,7 +591,7 @@ learn-harness-engineering/
 ## 강좌 구성 방식
 
 - 각 강의는 하나의 질문에 집중합니다
-- 강좌에는 6개의 프로젝트가 포함됩니다
+- 강좌에는 8개의 프로젝트가 포함됩니다
 - 모든 프로젝트는 에이전트가 실제 작업을 수행하도록 요구합니다
 - 모든 프로젝트는 약한 하니스와 강한 하니스의 결과를 비교합니다
 - 중요한 것은 작성된 문서의 양이 아니라 측정된 차이입니다
