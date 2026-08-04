@@ -21,14 +21,27 @@
 <p align="center"><strong>A project-based course on building the environment, state management, verification, and control mechanisms that make AI coding agents work reliably.</strong></p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Lectures-13-blue?style=flat-square" alt="13 Lectures">
-  <img src="https://img.shields.io/badge/Projects-7-green?style=flat-square" alt="7 Projects">
+  <img src="https://img.shields.io/badge/Lectures-14-blue?style=flat-square" alt="14 Lectures">
+  <img src="https://img.shields.io/badge/Projects-8-green?style=flat-square" alt="8 Projects">
   <img src="https://img.shields.io/badge/Languages-15-yellow?style=flat-square" alt="15 Languages">
   <img src="https://img.shields.io/badge/License-MIT-lightgrey?style=flat-square" alt="MIT License">
   <a href="https://discord.gg/XU7DQmpqk"><img src="https://img.shields.io/badge/Discord-Join_Community-5865F2?style=flat-square&logo=discord&logoColor=white" alt="Join the Discord community"></a>
 </p>
 
 > 🌍 This course is available in **15 languages**: English, 简体中文, 繁體中文, 日本語, 한국어, Español, Français, Русский, Deutsch, العربية, Tiếng Việt, Oʻzbekcha, Türkçe, Portuguese (BR), Українська. Choose your language from the badges above.
+
+## 🆕 What's New — August 2026
+
+**Graph Engineering Update — 1 new lecture, 1 new project**
+
+| What | Details |
+|------|---------|
+| **Lecture 14** | [From Single Loops to Graph Engineering](docs/en/lectures/lecture-14-graph-engineering/index.md) — Why a single loop grows into a graph: the four stacked layers (prompt → context → loop → graph) and where harness sits in that stack, the four parts of a graph (nodes, edges, shared state, routing), why in-loop checkpoints can't fix the three structural failures at scale (Goodhart, blindness upward, conflict), a framework-agnostic six-step walkthrough for building your first graph, graph vs. workflow, anchors, which open-source "graph engineering" projects existed before the name vs. after it, the orchestration tax, and when a graph is actually worth drawing. |
+| **Project 08** | [Draw Your Workflow as a Graph](docs/en/projects/project-08-graph-engineering-first-graph/index.md) — Three progressive experiments: draw your maker-checker loop as an explicit graph, add a parallel fan-out/fan-in node, then add a conditional rollback edge and a human-approval node. |
+
+**Key idea:** A loop is a graph with one node. When your task needs specialization, parallelism, shared state, verification, and recovery — it has stopped being a loop. It's a graph.
+
+---
 
 ## 🆕 What's New — July 2026
 
@@ -229,7 +242,7 @@ The curriculum is divided into three parts:
 
 ## Quick Start: Improve Your Agent Today
 
-You don't need to read all 13 lectures before you start getting value. If you're already using a coding agent on a real project, here's how to improve it right now.
+You don't need to read all 14 lectures before you start getting value. If you're already using a coding agent on a real project, here's how to improve it right now.
 
 The idea is simple: instead of just writing prompts, give your agent a set of structured files that define what to do, what's been done, and how to verify the work. These files live inside your repo, so every session starts from the same state.
 
@@ -340,6 +353,18 @@ The course is designed to be done in order. Each phase builds on the last.
          v
     P07  Build your first automated loop
          (goal loop, timer loop, maker-checker)
+
+    Phase 8: STRUCTURE THE SYSTEM
+    =============================
+
+    L14  Draw the system as a graph —
+         nodes, edges, shared state, routing
+
+         |
+         v
+    P08  Draw your workflow as a graph
+         (explicit graph, parallel fan-out/fan-in,
+          rollback edges, human-in-the-loop)
 ```
 
 Each phase takes about a week if you're going part-time. If you want to go faster, phases 1–3 can be done in a long weekend.
@@ -348,7 +373,7 @@ Each phase takes about a week if you're going part-time. If you want to go faste
 
 ## Syllabus
 
-### Lectures — 13 conceptual units, each answering one core question
+### Lectures — 14 conceptual units, each answering one core question
 
 *Read the full text for each lecture on the [Documentation Website](https://walkinglabs.github.io/learn-harness-engineering/).*
 
@@ -367,8 +392,9 @@ Each phase takes about a week if you're going part-time. If you want to go faste
 | [L11](./docs/en/lectures/lecture-11-why-observability-belongs-inside-the-harness/index.md) | Why does observability belong inside the harness? | If you can't see what the agent did, you can't fix what it broke |
 | [L12](./docs/en/lectures/lecture-12-why-every-session-must-leave-a-clean-state/index.md) | Why must every session leave a clean state? | The next session's success depends on this session's cleanup |
 | [L13](./docs/en/lectures/lecture-13-loop-engineering/index.md) | Why do you need to stop prompting your agent? | From manual driving to automated loops — goal loops, timer loops, and maker-checker separation |
+| [L14](./docs/en/lectures/lecture-14-graph-engineering/index.md) | Why does a single loop grow into a graph? | From single loops to graph engineering — nodes, edges, shared state, routing, and when a graph is actually worth drawing |
 
-### Projects — 7 hands-on projects applying lecture methods to the same Electron app
+### Projects — 8 hands-on projects applying lecture methods to the same Electron app
 
 | Project | What You Do | Harness Mechanism |
 |---------|------------|-------------------|
@@ -379,6 +405,7 @@ Each phase takes about a week if you're going part-time. If you want to go faste
 | [P05](./docs/en/projects/project-05-grounded-qa-verification/index.md) | Make the agent verify its own work | Self-verification + grounded Q&A + evidence-based completion |
 | [P06](./docs/en/projects/project-06-runtime-observability-and-debugging/index.md) | Build a complete harness from scratch (capstone) | Full harness: all mechanisms + observability + ablation study |
 | [P07](./docs/en/projects/project-07-loop-engineering-first-loop/index.md) | Build your first automated loop | Goal loops, timer loops, maker-checker separation, loop state management |
+| [P08](./docs/en/projects/project-08-graph-engineering-first-graph/index.md) | Draw your workflow as a graph | Explicit nodes/edges/state/routing, parallel fan-out/fan-in, rollback edges, human-in-the-loop approval |
 
 ```text
     PROJECT EVOLUTION
@@ -403,6 +430,9 @@ Each phase takes about a week if you're going part-time. If you want to go faste
      |
      v
     P07  Your first automated loop        You step outside the loop
+     |
+     v
+    P08  Draw your workflow as a graph    You draw the system as a graph
 
     Each project's solution becomes the next project's starter.
     The app evolves. Your harness skills grow with it.
@@ -565,12 +595,12 @@ See the full layered reference list in [`docs/en/resources/reference/`](./docs/e
 ```text
 learn-harness-engineering/
 ├── docs/                          # VitePress documentation site
-│   ├── lectures/                  # 13 lectures (index.md + code/ examples)
+│   ├── lectures/                  # 14 lectures (index.md + code/ examples)
 │   │   ├── lecture-01-*/
-│   │   └── ... (13 total)
-│   ├── projects/                  # 7 project descriptions
+│   │   └── ... (14 total)
+│   ├── projects/                  # 8 project descriptions
 │   │   ├── project-01-*/
-│   │   └── ... (7 total)
+│   │   └── ... (8 total)
 │   └── resources/                 # Multilingual templates & references (14 languages)
 │       ├── en/
 │       └── ... (14 total)
@@ -590,7 +620,7 @@ learn-harness-engineering/
 ## How the Course Is Organized
 
 - Each lecture focuses on one question
-- The course includes 7 projects
+- The course includes 8 projects
 - Every project requires the agent to do real work
 - Every project compares weak vs. strong harness results
 - What matters is the measured difference, not how many docs were written

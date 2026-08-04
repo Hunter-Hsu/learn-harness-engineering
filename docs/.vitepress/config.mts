@@ -25,7 +25,8 @@ const zhLectureItems = [
   { text: "跑通完整流程才算真正验证", link: "/zh/lectures/lecture-10-why-end-to-end-testing-changes-results/" },
   { text: "让 agent 的运行过程可观测", link: "/zh/lectures/lecture-11-why-observability-belongs-inside-the-harness/" },
   { text: "每次会话结束前都做好交接", link: "/zh/lectures/lecture-12-why-every-session-must-leave-a-clean-state/" },
-  { text: "从手动驱动到自动循环", link: "/zh/lectures/lecture-13-loop-engineering/" }
+  { text: "从手动驱动到自动循环", link: "/zh/lectures/lecture-13-loop-engineering/" },
+  { text: "从单循环到图工程", link: "/zh/lectures/lecture-14-graph-engineering/" }
 ];
 
 const zhProjectItems = [
@@ -36,7 +37,8 @@ const zhProjectItems = [
   { text: "运行反馈与行为修正", link: "/zh/projects/project-04-incremental-indexing/" },
   { text: "工作评审与自我验证", link: "/zh/projects/project-05-grounded-qa-verification/" },
   { text: "综合 Agent 工作环境", link: "/zh/projects/project-06-runtime-observability-and-debugging/" },
-  { text: "第一个自动循环", link: "/zh/projects/project-07-loop-engineering-first-loop/" }
+  { text: "第一个自动循环", link: "/zh/projects/project-07-loop-engineering-first-loop/" },
+  { text: "把你的工作流画成一张图", link: "/zh/projects/project-08-graph-engineering-first-graph/" }
 ];
 
 const zhResourceItems = [
@@ -64,7 +66,8 @@ const enLectureItems = [
   { text: "Why End-to-End Testing Changes Results", link: "/en/lectures/lecture-10-why-end-to-end-testing-changes-results/" },
   { text: "Why Observability Belongs Inside the Harness", link: "/en/lectures/lecture-11-why-observability-belongs-inside-the-harness/" },
   { text: "Why Every Session Must Leave a Clean State", link: "/en/lectures/lecture-12-why-every-session-must-leave-a-clean-state/" },
-  { text: "From Manual Prompting to Autonomous Loops", link: "/en/lectures/lecture-13-loop-engineering/" }
+  { text: "From Manual Prompting to Autonomous Loops", link: "/en/lectures/lecture-13-loop-engineering/" },
+  { text: "From Single Loops to Graph Engineering", link: "/en/lectures/lecture-14-graph-engineering/" }
 ];
 
 const enProjectItems = [
@@ -75,7 +78,8 @@ const enProjectItems = [
   { text: "Runtime Feedback and Scope Control", link: "/en/projects/project-04-incremental-indexing/" },
   { text: "Self-Verification and Role Separation", link: "/en/projects/project-05-grounded-qa-verification/" },
   { text: "Complete Harness (Capstone)", link: "/en/projects/project-06-runtime-observability-and-debugging/" },
-  { text: "Your First Automated Loop", link: "/en/projects/project-07-loop-engineering-first-loop/" }
+  { text: "Your First Automated Loop", link: "/en/projects/project-07-loop-engineering-first-loop/" },
+  { text: "Draw Your Workflow as a Graph", link: "/en/projects/project-08-graph-engineering-first-graph/" }
 ];
 
 const enResourceItems = [
@@ -105,6 +109,7 @@ const viLectureItems = [
   { text: "Tại sao mỗi phiên làm việc phải để lại trạng thái sạch", link: "/vi/lectures/lecture-12-why-every-session-must-leave-a-clean-state/" },
 
   { text: "Từ Nhắc lệnh Thủ công đến Vòng lặp Tự chủ", link: "/vi/lectures/lecture-13-loop-engineering/" },
+  { text: "Từ Vòng lặp Đơn lẻ đến Kỹ thuật Đồ thị", link: "/vi/lectures/lecture-14-graph-engineering/" }
 ];
 
 const viProjectItems = [
@@ -117,6 +122,7 @@ const viProjectItems = [
   { text: "Harness Hoàn chỉnh", link: "/vi/projects/project-06-runtime-observability-and-debugging/" },
 
   { text: "Xây dựng Vòng lặp Tự động Đầu tiên", link: "/vi/projects/project-07-loop-engineering-first-loop/" },
+  { text: "Vẽ Quy trình Làm việc của bạn thành một Đồ thị", link: "/vi/projects/project-08-graph-engineering-first-graph/" }
 ];
 
 const viResourceItems = [
@@ -146,6 +152,7 @@ const ruLectureItems = [
   { text: "Каждая сессия должна оставлять чистое состояние", link: "/ru/lectures/lecture-12-why-every-session-must-leave-a-clean-state/" },
 
   { text: "От ручных запросов к автономным циклам", link: "/ru/lectures/lecture-13-loop-engineering/" },
+  { text: "От одиночных циклов к графовой инженерии", link: "/ru/lectures/lecture-14-graph-engineering/" }
 ];
 
 const ruProjectItems = [
@@ -158,6 +165,7 @@ const ruProjectItems = [
   { text: "Полный harness (капстоун)", link: "/ru/projects/project-06-runtime-observability-and-debugging/" },
 
   { text: "Постройте свой первый автоматизированный цикл", link: "/ru/projects/project-07-loop-engineering-first-loop/" },
+  { text: "Нарисуйте ваш workflow как граф", link: "/ru/projects/project-08-graph-engineering-first-graph/" }
 ];
 
 const ruResourceItems = [
@@ -187,6 +195,7 @@ const uzLectureItems = [
   { text: "Har bir sessiya nega toza holat qoldirishi kerak", link: "/uz/lectures/lecture-12-why-every-session-must-leave-a-clean-state/" },
 
   { text: "Qoʻlda prompt yozishdan avtonom loop'largacha", link: "/uz/lectures/lecture-13-loop-engineering/" },
+  { text: "Yakka loopʼdan grafik muhandisligigacha", link: "/uz/lectures/lecture-14-graph-engineering/" }
 ];
 
 const uzProjectItems = [
@@ -199,6 +208,7 @@ const uzProjectItems = [
   { text: "Toʻliq harness (yakuniy loyiha)", link: "/uz/projects/project-06-runtime-observability-and-debugging/" },
 
   { text: "Birinchi avtomatlashtirilgan loop'ingizni qurish", link: "/uz/projects/project-07-loop-engineering-first-loop/" },
+  { text: "Ish oqimingizni grafik qilib chizing", link: "/uz/projects/project-08-graph-engineering-first-graph/" }
 ];
 
 const uzResourceItems = [
@@ -228,6 +238,8 @@ const koLectureItems = [
   { text: "모든 세션이 클린 상태로 끝나야 하는 이유", link: "/ko/lectures/lecture-12-why-every-session-must-leave-a-clean-state/" },
 
   { text: "수동 프롬프팅에서 자율 루프로", link: "/ko/lectures/lecture-13-loop-engineering/" },
+
+  { text: "단일 루프에서 그래프 엔지니어링으로", link: "/ko/lectures/lecture-14-graph-engineering/" },
 ];
 
 const koProjectItems = [
@@ -240,6 +252,8 @@ const koProjectItems = [
   { text: "완성형 하네스(캡스톤)", link: "/ko/projects/project-06-runtime-observability-and-debugging/" },
 
   { text: "첫 번째 자동 루프 구축하기", link: "/ko/projects/project-07-loop-engineering-first-loop/" },
+
+  { text: "내 워크플로우를 그래프로 그리기", link: "/ko/projects/project-08-graph-engineering-first-graph/" },
 ];
 
 const koResourceItems = [
@@ -269,6 +283,7 @@ const jaLectureItems = [
   { text: "すべてのセッションをきれいな引き継ぎで終える", link: "/ja/lectures/lecture-12-why-every-session-must-leave-a-clean-state/" },
 
   { text: "手動プロンプトから自律ループへ", link: "/ja/lectures/lecture-13-loop-engineering/" },
+  { text: "単一ループからグラフエンジニアリングへ", link: "/ja/lectures/lecture-14-graph-engineering/" }
 ];
 
 const jaProjectItems = [
@@ -281,6 +296,7 @@ const jaProjectItems = [
   { text: "完全なエージェント harness を構築する（総合課題）", link: "/ja/projects/project-06-runtime-observability-and-debugging/" },
 
   { text: "初めての自動ループを構築する", link: "/ja/projects/project-07-loop-engineering-first-loop/" },
+  { text: "ワークフローをグラフとして描く", link: "/ja/projects/project-08-graph-engineering-first-graph/" }
 ];
 
 const jaResourceItems = [
@@ -310,6 +326,7 @@ const esLectureItems = [
   { text: "Deja un handoff limpio al final de cada sesión", link: "/es/lectures/lecture-12-why-every-session-must-leave-a-clean-state/" },
 
   { text: "Del Prompting Manual a los Loops Autónomos", link: "/es/lectures/lecture-13-loop-engineering/" },
+  { text: "De los Loops Únicos a la Ingeniería de Grafos", link: "/es/lectures/lecture-14-graph-engineering/" }
 ];
 
 const esProjectItems = [
@@ -322,6 +339,7 @@ const esProjectItems = [
   { text: "Construye un harness completo (capstone)", link: "/es/projects/project-06-runtime-observability-and-debugging/" },
 
   { text: "Construye Tu Primer Loop Automatizado", link: "/es/projects/project-07-loop-engineering-first-loop/" },
+  { text: "Dibuja Tu Flujo de Trabajo como un Grafo", link: "/es/projects/project-08-graph-engineering-first-graph/" }
 ];
 
 const esResourceItems = [
@@ -351,6 +369,7 @@ const frLectureItems = [
   { text: "Laisser un handoff propre à la fin de chaque session", link: "/fr/lectures/lecture-12-why-every-session-must-leave-a-clean-state/" },
 
   { text: "Du prompting manuel aux boucles autonomes", link: "/fr/lectures/lecture-13-loop-engineering/" },
+  { text: "Des boucles simples à l'ingénierie des graphes", link: "/fr/lectures/lecture-14-graph-engineering/" }
 ];
 
 const frProjectItems = [
@@ -363,6 +382,7 @@ const frProjectItems = [
   { text: "Construire un harness complet (capstone)", link: "/fr/projects/project-06-runtime-observability-and-debugging/" },
 
   { text: "Construisez votre première boucle automatisée", link: "/fr/projects/project-07-loop-engineering-first-loop/" },
+  { text: "Dessinez votre workflow sous forme de graphe", link: "/fr/projects/project-08-graph-engineering-first-graph/" }
 ];
 
 const frResourceItems = [
@@ -392,6 +412,7 @@ const deLectureItems = [
   { text: "Sauberes Handoff am Ende jeder Session", link: "/de/lectures/lecture-12-why-every-session-must-leave-a-clean-state/" },
 
   { text: "Von manuellen Prompts zu autonomen Loops", link: "/de/lectures/lecture-13-loop-engineering/" },
+  { text: "Von Einzel-Loops zu Graph Engineering", link: "/de/lectures/lecture-14-graph-engineering/" }
 ];
 
 const deProjectItems = [
@@ -404,6 +425,7 @@ const deProjectItems = [
   { text: "Einen vollständigen Agenten-harness bauen (Capstone)", link: "/de/projects/project-06-runtime-observability-and-debugging/" },
 
   { text: "Baue deinen ersten automatisierten Loop", link: "/de/projects/project-07-loop-engineering-first-loop/" },
+  { text: "Zeichne deinen Workflow als Graph", link: "/de/projects/project-08-graph-engineering-first-graph/" }
 ];
 
 const deResourceItems = [
@@ -433,6 +455,7 @@ const arLectureItems = [
   { text: "اترك handoff نظيفًا في نهاية كل جلسة", link: "/ar/lectures/lecture-12-why-every-session-must-leave-a-clean-state/" },
 
   { text: "من المطالبة اليدوية إلى الحلقات المستقلة", link: "/ar/lectures/lecture-13-loop-engineering/" },
+  { text: "من الحلقة الواحدة إلى هندسة الرسوم البيانية", link: "/ar/lectures/lecture-14-graph-engineering/" }
 ];
 
 const arProjectItems = [
@@ -445,6 +468,7 @@ const arProjectItems = [
   { text: "ابنِ harness كاملًا للوكيل (Capstone)", link: "/ar/projects/project-06-runtime-observability-and-debugging/" },
 
   { text: "ابني أول حلقة آلية", link: "/ar/projects/project-07-loop-engineering-first-loop/" },
+  { text: "ارسم سير عملك كرسم بياني", link: "/ar/projects/project-08-graph-engineering-first-graph/" }
 ];
 
 const arResourceItems = [
@@ -474,6 +498,7 @@ const trLectureItems = [
   { text: "Her Oturum Neden Temiz Bir Durumla Bitmeli", link: "/tr/lectures/lecture-12-why-every-session-must-leave-a-clean-state/" },
 
   { text: "Manuel Prompting'den Otonom Loop'lara", link: "/tr/lectures/lecture-13-loop-engineering/" },
+  { text: "Tek Döngülerden Graf Mühendisliğine", link: "/tr/lectures/lecture-14-graph-engineering/" }
 ];
 
 const trProjectItems = [
@@ -486,6 +511,7 @@ const trProjectItems = [
   { text: "Eksiksiz Harness (Bitirme Projesi)", link: "/tr/projects/project-06-runtime-observability-and-debugging/" },
 
   { text: "İlk Otomatik Loop'unuzu Oluşturun", link: "/tr/projects/project-07-loop-engineering-first-loop/" },
+  { text: "İş Akışınızı Bir Graf Olarak Çizin", link: "/tr/projects/project-08-graph-engineering-first-graph/" }
 ];
 
 const trResourceItems = [
@@ -515,6 +541,7 @@ const zhTWLectureItems = [
   { text: "每次會話結束前都做好交接", link: "/zh-TW/lectures/lecture-12-why-every-session-must-leave-a-clean-state/" },
 
   { text: "從手動驅動到自動循環", link: "/zh-TW/lectures/lecture-13-loop-engineering/" },
+  { text: "從單循環到圖工程", link: "/zh-TW/lectures/lecture-14-graph-engineering/" }
 ];
 
 const zhTWProjectItems = [
@@ -527,6 +554,7 @@ const zhTWProjectItems = [
   { text: "搭建一套完整的 agent 工作環境", link: "/zh-TW/projects/project-06-runtime-observability-and-debugging/" },
 
   { text: "搭建你的第一個自動循環", link: "/zh-TW/projects/project-07-loop-engineering-first-loop/" },
+  { text: "把你的工作流畫成一張圖", link: "/zh-TW/projects/project-08-graph-engineering-first-graph/" }
 ];
 
 const zhTWResourceItems = [
@@ -555,6 +583,7 @@ const ptBRLectureItems = [
   { text: "Por que observabilidade pertence ao Harness", link: "/pt-BR/lectures/lecture-11-why-observability-belongs-inside-the-harness/" },
   { text: "Por que toda sessão deve deixar um estado limpo", link: "/pt-BR/lectures/lecture-12-why-every-session-must-leave-a-clean-state/" },
   { text: "Do Prompting Manual aos Loops Autônomos", link: "/pt-BR/lectures/lecture-13-loop-engineering/" },
+  { text: "Do Loop Único à Engenharia de Grafos", link: "/pt-BR/lectures/lecture-14-graph-engineering/" }
 ];
 
 const ptBRProjectItems = [
@@ -566,6 +595,7 @@ const ptBRProjectItems = [
   { text: "Autoverificação e Separação de Papéis", link: "/pt-BR/projects/project-05-grounded-qa-verification/" },
   { text: "Harness Completo (Projeto Final)", link: "/pt-BR/projects/project-06-runtime-observability-and-debugging/" },
   { text: "Construa Seu Primeiro Loop Automatizado", link: "/pt-BR/projects/project-07-loop-engineering-first-loop/" },
+  { text: "Desenhe Seu Fluxo de Trabalho como um Grafo", link: "/pt-BR/projects/project-08-graph-engineering-first-graph/" }
 ];
 
 const ptBRResourceItems = [
@@ -595,6 +625,7 @@ const ukLectureItems = [
   { text: "Чому кожна сесія має залишати чистий стан", link: "/uk/lectures/lecture-12-why-every-session-must-leave-a-clean-state/" },
 
   { text: "Від ручного введення промптів до автономних циклів", link: "/uk/lectures/lecture-13-loop-engineering/" },
+  { text: "Від одиночних циклів до графової інженерії", link: "/uk/lectures/lecture-14-graph-engineering/" }
 ];
 
 const ukProjectItems = [
@@ -607,6 +638,7 @@ const ukProjectItems = [
   { text: "Повний harness (підсумковий проєкт)", link: "/uk/projects/project-06-runtime-observability-and-debugging/" },
 
   { text: "Побудова вашого першого автоматизованого циклу", link: "/uk/projects/project-07-loop-engineering-first-loop/" },
+  { text: "Намалюйте ваш робочий процес як граф", link: "/uk/projects/project-08-graph-engineering-first-graph/" }
 ];
 
 const ukResourceItems = [

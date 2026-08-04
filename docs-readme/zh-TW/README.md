@@ -22,6 +22,21 @@
 
 Learn Harness Engineering 是一門專注於 AI 程式設計代理工程化的課程。我們深入研究並整合了業界最先進的 Harness Engineering 理論與實踐。核心參考資料包括：
 
+> **🆕 2026 年 8 月更新：圖工程（Graph Engineering）**——新增 1 講 + 1 個專案：
+>
+> - **第十四講** [從單循環到圖工程](../../docs/zh-TW/lectures/lecture-14-graph-engineering/index.md)：為什麼單循環必然長成圖——四層疊加（prompt → context → loop → graph）及 harness 在其中的位置、圖的四個零件（節點、邊、共享狀態、路由）、為什麼 loop 內的檢查點救不了規模上的三種結構性失敗（Goodhart、向上失明、衝突）、框架無關的六步構建你的第一張圖、Graph 與 Workflow 的區別、錨、發布前 vs 發布後的開源專案現況、編排稅，以及什麼時候真的值得畫圖。
+> - **專案 08** [把你的工作流畫成一張圖](../../docs/zh-TW/projects/project-08-graph-engineering-first-graph/index.md)：三個遞進實驗——把 maker-checker loop 畫成顯式圖、加平行 fan-out/fan-in 節點、加條件回退邊和人工審批節點。
+>
+> **核心觀點：** Loop 是只有一個節點的圖。當任務需要分工、平行、共享狀態、驗證和恢復時——它就不再是 loop，而是圖了。
+>
+> **🆕 2026 年 7 月更新：循環工程（Loop Engineering）**——新增 1 講 + 1 個專案 + 程式碼範本：
+>
+> - **第十三講** [為什麼你需要停止親自提示你的代理](../../docs/zh-TW/lectures/lecture-13-loop-engineering/index.md)：從 `/goal` 到循環工程的六個原語（automations、worktrees、skills、connectors、sub-agents、external state）、生成器/評估器分離、四種沉默成本，以及逐步構建你的第一個循環。
+> - **專案 07** [構建你的第一個自動循環](../../docs/zh-TW/projects/project-07-loop-engineering-first-loop/index.md)：三個遞進實驗——目標循環、定時循環、製造者-檢查者循環。對比手動 vs. 自動化、衡量干預減少、學會跳出循環。
+> - **程式碼範本**：`goal-template.md`、`loop-state-template.md`、`maker-prompt.md`、`checker-prompt.md`——即插即用的循環構建範本。
+>
+> **核心觀點：** Harness 工程造車。循環工程設計它行駛的道路——而你要從車外設計這條路。
+
 - [OpenAI: Harness engineering: leveraging Codex in an agent-first world](https://openai.com/index/harness-engineering/)
 - [Anthropic: Effective harnesses for long-running agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents)
 - [Anthropic: Harness design for long-running application development](https://www.anthropic.com/engineering/harness-design-long-running-apps)
@@ -194,15 +209,15 @@ Harness Engineering 是關於在模型周圍建構一個完整的工作環境，
 
 課程分為三個部分：
 
-1. **講座**：12 個概念單元，解釋 harness engineering 背後的理論。
-2. **專案**：6 個動手專案，讓你從零建構一個代理工作空間。
+1. **講座**：14 個概念單元，解釋 harness engineering 背後的理論。
+2. **專案**：8 個動手專案，讓你從零建構一個代理工作空間。
 3. **資源庫**：可直接複製使用的模板（`AGENTS.md`、`feature_list.json`、`init.sh` 等），今天就能在你的儲存庫中使用。
 
 ---
 
 ## 快速入門：今天就改善你的代理
 
-你不需要讀完所有 12 堂講座才能開始受益。如果你已經在真實專案中使用程式設計代理，以下是如何立刻改善它的方法。
+你不需要先讀完所有 14 堂講座才能開始獲得價值。如果你已經在真實專案中使用程式設計代理，以下是如何立刻改善它的方法。
 
 概念很簡單，與其只寫提示，不如給你的代理一組結構化的檔案，定義該做什麼、已經做了什麼、以及如何驗證工作。這些檔案存在你的儲存庫中，所以每個工作階段都從相同的狀態開始。
 
@@ -222,7 +237,7 @@ Harness Engineering 是關於在模型周圍建構一個完整的工作環境，
 
 ## 畢業專案：一個真實的應用程式
 
-所有六個課程專案都圍繞著同一個產品：**一個基於 Electron 的個人知識庫桌面應用程式**。
+全部八個課程專案都圍繞著同一個產品：**一個基於 Electron 的個人知識庫桌面應用程式**。
 
 ```text
     ┌─────────────────────────────────────────────────────┐
@@ -297,6 +312,25 @@ Harness Engineering 是關於在模型周圍建構一個完整的工作環境，
          v                                     v
     P05  代理驗證自己的工作                   P06  建構完整的 harness
                                                （畢業專案）
+
+    階段 7：自動化循環
+    ==========================
+    L13  停止提示你的代理——
+         改為設計循環
+         |
+         v
+    P07  構建你的第一個自動循環
+         （目標循環、定時循環、製造者-檢查者）
+
+    階段 8：結構化系統
+    =============================
+    L14  把系統畫成一張圖——
+         節點、邊、共享狀態、路由
+         |
+         v
+    P08  把你的工作流畫成一張圖
+         （顯式圖、平行 fan-out/fan-in、
+          回退邊、人機協同）
 ```
 
 如果你是兼職學習，每個階段大約需要一週。如果你想加快速度，階段 1-3 可以在一個長週末完成。
@@ -305,35 +339,39 @@ Harness Engineering 是關於在模型周圍建構一個完整的工作環境，
 
 ## 課程大綱
 
-### 講座 — 12 個概念單元，每個聚焦一個關鍵提問
+### 講座 — 14 個概念單元，每個聚焦一個關鍵提問
 
 *在[文件網站](https://walkinglabs.github.io/learn-harness-engineering/)上閱讀每堂講座的完整內容。*
 
 | 場次 | 問題 | 核心概念 |
 |---------|----------|-----------|
-| [L01](../../docs/en/lectures/lecture-01-why-capable-agents-still-fail/index.md) | 為什麼強大的模型在真實任務上仍然會失敗？ | 基準測試與真實工程之間的能力差距 |
-| [L02](../../docs/en/lectures/lecture-02-what-a-harness-actually-is/index.md) | 「harness」到底是什麼意思？ | 五個子系統，指令、狀態、驗證、範圍、生命週期 |
-| [L03](../../docs/en/lectures/lecture-03-why-the-repository-must-become-the-system-of-record/index.md) | 為什麼儲存庫必須是唯一的真實來源？ | 如果代理看不到它，它就不存在 |
-| [L04](../../docs/en/lectures/lecture-04-why-one-giant-instruction-file-fails/index.md) | 為什麼一個巨大的指令檔案會失敗？ | 漸進揭露，給一張地圖，不是一本百科全書 |
-| [L05](../../docs/en/lectures/lecture-05-why-long-running-tasks-lose-continuity/index.md) | 為什麼長時間執行的任務會失去連續性？ | 將進度持久化到磁碟；從你停止的地方接續 |
-| [L06](../../docs/en/lectures/lecture-06-why-initialization-needs-its-own-phase/index.md) | 為什麼初始化需要自己的階段？ | 在代理開始工作之前驗證環境是否健康 |
-| [L07](../../docs/en/lectures/lecture-07-why-agents-overreach-and-under-finish/index.md) | 為什麼代理會過度延伸和過早結束？ | 每次一個功能；明確的完成定義 |
-| [L08](../../docs/en/lectures/lecture-08-why-feature-lists-are-harness-primitives/index.md) | 為什麼功能列表是 harness 的基本元素？ | 機器可讀的範圍邊界，代理無法忽略 |
-| [L09](../../docs/en/lectures/lecture-09-why-agents-declare-victory-too-early/index.md) | 為什麼代理會過早宣告勝利？ | 驗證缺口，信心不等於正確 |
-| [L10](../../docs/en/lectures/lecture-10-why-end-to-end-testing-changes-results/index.md) | 為什麼端到端測試能改變結果？ | 只有完整的流程執行才算真正的驗證 |
-| [L11](../../docs/en/lectures/lecture-11-why-observability-belongs-inside-the-harness/index.md) | 為什麼可觀測性應該屬於 harness 內部？ | 如果你看不到代理做了什麼，你就無法修復它破壞的東西 |
-| [L12](../../docs/en/lectures/lecture-12-why-every-session-must-leave-a-clean-state/index.md) | 為什麼每個工作階段都必須留下乾淨的狀態？ | 下一個工作階段的成功取決於這個工作階段的清理 |
+| [L01](../../docs/zh-TW/lectures/lecture-01-why-capable-agents-still-fail/index.md) | 為什麼強大的模型在真實任務上仍然會失敗？ | 基準測試與真實工程之間的能力差距 |
+| [L02](../../docs/zh-TW/lectures/lecture-02-what-a-harness-actually-is/index.md) | 「harness」到底是什麼意思？ | 五個子系統，指令、狀態、驗證、範圍、生命週期 |
+| [L03](../../docs/zh-TW/lectures/lecture-03-why-the-repository-must-become-the-system-of-record/index.md) | 為什麼儲存庫必須是唯一的真實來源？ | 如果代理看不到它，它就不存在 |
+| [L04](../../docs/zh-TW/lectures/lecture-04-why-one-giant-instruction-file-fails/index.md) | 為什麼一個巨大的指令檔案會失敗？ | 漸進揭露，給一張地圖，不是一本百科全書 |
+| [L05](../../docs/zh-TW/lectures/lecture-05-why-long-running-tasks-lose-continuity/index.md) | 為什麼長時間執行的任務會失去連續性？ | 將進度持久化到磁碟；從你停止的地方接續 |
+| [L06](../../docs/zh-TW/lectures/lecture-06-why-initialization-needs-its-own-phase/index.md) | 為什麼初始化需要自己的階段？ | 在代理開始工作之前驗證環境是否健康 |
+| [L07](../../docs/zh-TW/lectures/lecture-07-why-agents-overreach-and-under-finish/index.md) | 為什麼代理會過度延伸和過早結束？ | 每次一個功能；明確的完成定義 |
+| [L08](../../docs/zh-TW/lectures/lecture-08-why-feature-lists-are-harness-primitives/index.md) | 為什麼功能列表是 harness 的基本元素？ | 機器可讀的範圍邊界，代理無法忽略 |
+| [L09](../../docs/zh-TW/lectures/lecture-09-why-agents-declare-victory-too-early/index.md) | 為什麼代理會過早宣告勝利？ | 驗證缺口，信心不等於正確 |
+| [L10](../../docs/zh-TW/lectures/lecture-10-why-end-to-end-testing-changes-results/index.md) | 為什麼端到端測試能改變結果？ | 只有完整的流程執行才算真正的驗證 |
+| [L11](../../docs/zh-TW/lectures/lecture-11-why-observability-belongs-inside-the-harness/index.md) | 為什麼可觀測性應該屬於 harness 內部？ | 如果你看不到代理做了什麼，你就無法修復它破壞的東西 |
+| [L12](../../docs/zh-TW/lectures/lecture-12-why-every-session-must-leave-a-clean-state/index.md) | 為什麼每個工作階段都必須留下乾淨的狀態？ | 下一個工作階段的成功取決於這個工作階段的清理 |
+| [L13](../../docs/zh-TW/lectures/lecture-13-loop-engineering/index.md) | 為什麼你需要停止親自提示你的代理？ | 從手動驅動到自動循環——目標循環、定時循環、製造者-檢查者分離 |
+| [L14](../../docs/zh-TW/lectures/lecture-14-graph-engineering/index.md) | 為什麼單循環會演變成圖？ | 從單循環到圖工程——節點、邊、共享狀態、路由，以及何時真正值得畫圖 |
 
-### 專案 — 6 個動手專案，將講座方法應用於同一個 Electron 應用程式
+### 專案 — 8 個動手專案，將講座方法應用於同一個 Electron 應用程式
 
 | 專案 | 你要做什麼 | Harness 機制 |
 |---------|------------|-------------------|
-| [P01](../../docs/en/projects/project-01-baseline-vs-minimal-harness/index.md) | 將同一任務執行兩次，僅提示 vs. 規則優先 | 最小 harness，AGENTS.md + init.sh + feature_list.json |
-| [P02](../../docs/en/projects/project-02-agent-readable-workspace/index.md) | 重構儲存庫，讓代理能夠閱讀它 | 代理可讀的工作空間 + 持久化狀態檔案 |
-| [P03](../../docs/en/projects/project-03-multi-session-continuity/index.md) | 讓代理從上次停止的地方接續 | 進度日誌 + 工作階段交接 + 多工作階段連續性 |
-| [P04](../../docs/en/projects/project-04-incremental-indexing/index.md) | 阻止代理做得太多或太少 | 執行時回饋 + 範圍控制 + 增量索引 |
-| [P05](../../docs/en/projects/project-05-grounded-qa-verification/index.md) | 讓代理驗證自己的工作 | 自我驗證 + 有依據的問答 + 基於證據的完成 |
-| [P06](../../docs/en/projects/project-06-runtime-observability-and-debugging/index.md) | 從零建構一個完整的 harness（畢業專案） | 完整 harness，所有機制 + 可觀測性 + 消融實驗 |
+| [P01](../../docs/zh-TW/projects/project-01-baseline-vs-minimal-harness/index.md) | 將同一任務執行兩次，僅提示 vs. 規則優先 | 最小 harness，AGENTS.md + init.sh + feature_list.json |
+| [P02](../../docs/zh-TW/projects/project-02-agent-readable-workspace/index.md) | 重構儲存庫，讓代理能夠閱讀它 | 代理可讀的工作空間 + 持久化狀態檔案 |
+| [P03](../../docs/zh-TW/projects/project-03-multi-session-continuity/index.md) | 讓代理從上次停止的地方接續 | 進度日誌 + 工作階段交接 + 多工作階段連續性 |
+| [P04](../../docs/zh-TW/projects/project-04-incremental-indexing/index.md) | 阻止代理做得太多或太少 | 執行時回饋 + 範圍控制 + 增量索引 |
+| [P05](../../docs/zh-TW/projects/project-05-grounded-qa-verification/index.md) | 讓代理驗證自己的工作 | 自我驗證 + 有依據的問答 + 基於證據的完成 |
+| [P06](../../docs/zh-TW/projects/project-06-runtime-observability-and-debugging/index.md) | 從零建構一個完整的 harness（畢業專案） | 完整 harness，所有機制 + 可觀測性 + 消融實驗 |
+| [P07](../../docs/zh-TW/projects/project-07-loop-engineering-first-loop/index.md) | 構建你的第一個自動循環 | 目標循環、定時循環、製造者-檢查者分離、循環狀態管理 |
+| [P08](../../docs/zh-TW/projects/project-08-graph-engineering-first-graph/index.md) | 把你的工作流畫成一張圖 | 顯式的節點/邊/狀態/路由、平行 fan-out/fan-in、回退邊、人機協同審批 |
 
 ```text
     專案演進
@@ -508,7 +546,7 @@ npm run docs:preview    # 預覽建置後的網站
 - [Thoughtworks / Martin Fowler: Harness engineering for coding agent users](https://martinfowler.com/articles/harness-engineering.html)
 - [Cursor: Continually improving our agent harness](https://cursor.com/blog/continually-improving-agent-harness)
 
-完整的分層參考列表請見 [`docs/en/resources/reference/`](../../docs/en/resources/reference/index.md)。
+完整的分層參考列表請見 [`docs/zh-TW/resources/reference/`](../../docs/zh-TW/resources/reference/index.md)。
 
 ---
 
@@ -517,13 +555,13 @@ npm run docs:preview    # 預覽建置後的網站
 ```text
 learn-harness-engineering/
 ├── docs/                          # VitePress 文件網站
-│   ├── lectures/                  # 12 堂講座（index.md + code/ 範例）
+│   ├── lectures/                  # 14 堂講座（index.md + code/ 範例）
 │   │   ├── lecture-01-*/
 │   │   ├── lecture-02-*/
-│   │   └── ...（共 12 堂）
-│   ├── projects/                  # 6 個專案說明
+│   │   └── ...（共 14 堂）
+│   ├── projects/                  # 8 個專案說明
 │   │   ├── project-01-*/
-│   │   └── ...（共 6 個）
+│   │   └── ...（共 8 個）
 │   └── resources/                 # 多語言模板與參考資料
 │       ├── en/                    # 英文模板、檢查清單、指南
 │       ├── zh/                    # 中文模板、檢查清單、指南
@@ -543,7 +581,7 @@ learn-harness-engineering/
 ## 課程組織方式
 
 - 每堂講座專注於一個問題
-- 課程包含 6 個專案
+- 課程包含 8 個專案
 - 每個專案都要求代理做真實的工作
 - 每個專案都比較弱 harness 與強 harness 的結果
 - 重要的是可量測的差異，而不是寫了多少文件
