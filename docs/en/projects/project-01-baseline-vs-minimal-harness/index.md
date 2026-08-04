@@ -36,3 +36,10 @@ Repository path: [`projects/project-01/`](https://github.com/walkinglabs/learn-h
 The four concrete features are window launch, document list, question panel, and
 local data directory creation. Inspect `solution/feature_list.json` for the
 expected evidence for each feature.
+
+This is a comparison experiment, not a requirement that both agent runs
+produce a production-ready Electron app. Run the same task against the weak
+`starter/` and explicit-harness `solution/`, then record which features each
+run completes and what evidence supports the result. Partial or broken output
+is valid experimental evidence; the feature list defines what to measure, not
+a requirement that the prompt-only run must pass every item.
