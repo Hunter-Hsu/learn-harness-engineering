@@ -42,7 +42,7 @@ With the scenarios above in mind, these concepts are no longer just jargon:
 
 There is really only one core principle: **When things fail, don't swap the model first — check the harness.** If the same model succeeds on similar, well-structured tasks, assume it's a harness problem.
 
-What does this look like in practice? Attribute every failure to a specific layer. Don't just say "the model isn't good enough." Ask yourself: was the task unclear? Was context insufficient? Were there no verification methods? Map each failure to one of the five defense layers — task specification, context provision, execution environment, verification feedback, state management. Build this habit, and you'll find "the model isn't good enough" appearing less and less in your logs.
+What does this look like in practice? Attribute every failure to a specific layer. Don't just say "the model isn't good enough." Ask yourself: was the task unclear? Was context insufficient? Were there no verification methods? Map each failure to one of the five defense layers — task specification, context provision, execution environment, verification feedback, or state management. These are failure-diagnosis layers, not additional core concepts. Build this habit, and you'll find "the model isn't good enough" appearing less and less in your logs.
 
 Then, write an explicit Definition of Done for every task. Don't say "add a search feature." Spell it out:
 ```

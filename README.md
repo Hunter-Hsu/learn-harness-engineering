@@ -252,11 +252,17 @@ The idea is simple: instead of just writing prompts, give your agent a set of st
     ├── CLAUDE.md              <-- (alternative, if using Claude Code)
     ├── init.sh                <-- runs install + verify + start
     ├── feature_list.json      <-- what features exist, which are done
-    ├── claude-progress.md     <-- what happened each session
+    ├── claude-progress.md     <-- session progress (historical filename; agent-agnostic)
     └── src/                   <-- your actual code
 ```
 
 Grab the starter templates from the [Resource Library](https://walkinglabs.github.io/learn-harness-engineering/en/resources/) and drop them into your project. That's it. Four files, and your agent sessions will already be significantly more stable than running on prompts alone.
+
+`claude-progress.md` is a generic, repository-local session progress log; the
+name is retained for compatibility with the course examples. It is not tied to
+Claude Code and is not updated automatically by any agent. Codex, OpenHands,
+Antigravity, and other coding agents can use the same file when their root
+instructions tell them to read it at startup and update it before handoff.
 
 ---
 
