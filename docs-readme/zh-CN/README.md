@@ -361,6 +361,8 @@ Harness Engineering 是围绕模型构建一个完整的工作环境，使其产
 | [L10](../../docs/zh/lectures/lecture-10-why-end-to-end-testing-changes-results/index.md) | 为什么端到端测试能改变结果？ | 只有完整的流水线运行才算真正的验证 |
 | [L11](../../docs/zh/lectures/lecture-11-why-observability-belongs-inside-the-harness/index.md) | 为什么可观测性应该属于 Harness？ | 如果你看不到代理做了什么，你就无法修复它破坏的东西 |
 | [L12](../../docs/zh/lectures/lecture-12-why-every-session-must-leave-a-clean-state/index.md) | 为什么每次会话都必须留下干净的状态？ | 下一次会话的成功取决于这一次会话的清理 |
+
+### 项目——6 个动手项目，将讲座方法应用到同一个 Electron 应用上
 | [L13](../../docs/zh/lectures/lecture-13-loop-engineering/index.md) | 为什么你需要停止亲自提示你的代理？ | 从手动驱动到自动循环——目标循环、定时循环、制造者-检查者分离 |
 | [L14](../../docs/zh/lectures/lecture-14-graph-engineering/index.md) | 为什么单循环会演变成图？ | 从单循环到图工程——节点、边、共享状态、路由，以及何时真正值得画图 |
 
